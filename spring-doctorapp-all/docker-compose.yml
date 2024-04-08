@@ -1,0 +1,21 @@
+version: "3"
+services:
+    doctor-api:
+      image: spriyamathan/newrepo:doctorapi
+      networks:
+       - my-bridge-network 
+      ports:
+       - "8082:8080"
+      depends_on:
+       - sqlhost
+        
+    sqlhost:
+     image: mysql:8
+     networks:
+      - my-bridge-network
+     environment:
+       - MYSQL_ROOT_PASSWORD=root
+       - MYSQL_DATABASE=doctordb
+    
+networks: 
+   my-bridge-network:   
