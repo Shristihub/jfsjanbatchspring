@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class ShapeFactory {
 	// by type
 	@Autowired
-	@Qualifier("rectangle") //shape = new Rectangle()
+	@Qualifier("square") //shape = new Rectangle()
 	Shape shape;
 
 //	by name
@@ -16,14 +16,19 @@ public class ShapeFactory {
 	@Autowired
 	Shape triangle;
 	
-	@Autowired
-	Shape shaper;
 	
+	Shape rectangle;
+	public ShapeFactory(Shape rectangle) {
+		super();
+		this.rectangle = rectangle;
+	}
+
+
 	public void printArea(int x, int y) {
 	 System.out.println("Printing area");
 	 shape.area(x, y);
 	 triangle.area(x, y);
-	 shaper.area(x, y);
+	 rectangle.area(x, y);
 	
 	}
 

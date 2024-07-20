@@ -1,0 +1,8 @@
+version: "3.0"
+services:
+ spring-rest:
+   image: spring-rest:v2
+   container_name: springrest-con
+   ports: 
+    - 8082:8080
+   build: .

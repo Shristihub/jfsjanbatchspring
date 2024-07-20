@@ -2,7 +2,7 @@ package com.example.demo.auto;
 
 import org.springframework.stereotype.Component;
 
-@Component("shaper")
+@Component
 public class Square  implements Shape {
 
 	@Override

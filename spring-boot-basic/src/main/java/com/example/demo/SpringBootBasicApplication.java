@@ -14,7 +14,7 @@ import com.example.demo.constr.Student;
 import com.example.demo.javabased.ShapeDetails;
 import com.trial.basics.Employee;
 
-@SpringBootApplication(scanBasePackages = {"com.example","com.trial"})
+@SpringBootApplication(scanBasePackages = {"com.example.demo","com.trial"})
 //@ComponentScan({"com.example","com.trial"})
 public class SpringBootBasicApplication implements CommandLineRunner {
 
@@ -38,16 +38,16 @@ public class SpringBootBasicApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 //		Employee employee = context.getBean("employee",Employee.class);
-		System.out.println(employee);
-		System.out.println(student);
+//		System.out.println(employee);
+//		System.out.println(student);
 		factory.printArea(1, 20);
-		details.printArea(20, 10);
-		
-		System.out.println();
-		System.out.println("Beans created by the APP Context");
-		
-		Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
-		
+//		details.printArea(20, 10);
+//		
+//		System.out.println();
+//		System.out.println("Beans created by the APP Context");
+//		
+//		Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+//		
 		
 	}
 

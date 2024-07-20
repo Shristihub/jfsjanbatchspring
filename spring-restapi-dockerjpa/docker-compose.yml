@@ -1,0 +1,24 @@
+version: "3.0"
+services:
+ mysql:
+  image: mysql:8.3.0
+  container_name: mysql-bookcon
+  environment:  
+   MYSQL_ROOT_PASSWORD: root
+   MYSQL_DATABASE: springdb
+  ports:
+   - 3307:3307
+  networks:
+   - book-db-network 
+ book-rest:
+  image: book-restapi
+  container_name: book-restcon
+  ports:
+   - 8081:8081
+  build: .
+  networks: 
+   - book-db-network
+  depends_on:
+   - mysql  
+networks: 
+ book-db-network: 

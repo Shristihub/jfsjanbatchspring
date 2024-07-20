@@ -61,33 +61,35 @@ public class BookController {
 
 //	http://localhost:8080/book-api/v1/books/author/Kathy
 	@GetMapping("/books/author/{author}")
-	List<Book> getByAuthor(@PathVariable("author")String author) {
+	List<Book> getByAuthor(@PathVariable("author") String author) {
 		List<Book> books = bookService.getByAuthor(author);
 		return books;
 	}
+
 //	http://localhost:8080/book-api/v1/books/price?cost=1000
 	@GetMapping("/books/price")
 	List<Book> getByLesserPrice(@RequestParam("cost") double price) {
 		List<Book> books = bookService.getByLesserPrice(price);
 		return books;
 	}
+
 //	http://localhost:8080/book-api/v1/books/author/Kathy/category/tech
 	@GetMapping("/books/author/{author}/category/{category}")
-	List<Book> getByAuthorCategory(@PathVariable("author")String author, 
-			               @PathVariable("category")String category) {
+	List<Book> getByAuthorCategory(@PathVariable("author") String author, @PathVariable("category") String category) {
 		List<Book> books = bookService.getByAuthorCategory(author, category);
 		return books;
 	}
+
 //	http://localhost:8080/book-api/v1/books/author/title?auth=kathy&title=java
 	@GetMapping("/books/author/title")
-	List<Book> getByAuthTitle(@RequestParam("auth")String author,
-			@RequestParam("title")String title) {
+	List<Book> getByAuthTitle(@RequestParam("auth") String author, @RequestParam("title") String title) {
 		List<Book> books = bookService.getByAuthTitle(author, title);
 		return books;
 	}
+
 //	http://localhost:8080/book-api/v1/books/title/java
 	@GetMapping("/books/title/{title}")
-	List<Book> getBooksByTitles(@PathVariable("title")String title) {
+	List<Book> getBooksByTitles(@PathVariable("title") String title) {
 		List<Book> books = bookService.getBooksByTitles(title);
 		return books;
 	}
